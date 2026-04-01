@@ -4,5 +4,9 @@ excerpt: "We analyzed gene expression profiles from 72 leukemia patients to deve
 collection: portfolio
 
 ---
-[View Full Project Report]file/Midterm Project Bella Dai.html
+This project compares parametric and nonparametric machine learning methods for leukemia subtype classification using gene expression data.
+
+Methods include logistic regression, Naive Bayes, discriminant analysis, decision trees, random forests, boosting, KNN, and SVM.
+
+[View Full Project Report](../files/Midterm%20Project%20Bella%20Dai.html)
 
