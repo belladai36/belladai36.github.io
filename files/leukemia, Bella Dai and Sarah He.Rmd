@@ -1,0 +1,371 @@
+---
+title: "4480_Final Project_Leukemia Classification"
+author: "Bella Dai, Sarah He"
+date: "2025-12-10"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1.  Exploration: PCA on different sets of predictors
+
+```{r}
+set.seed(0)
+leukemia = read.table("~/Desktop/leukemia.txt", head = TRUE)
+
+# randomly select 10% of the predictors
+n = dim(leukemia)[1]
+m = dim(leukemia)[2]
+idx = sample(1:m, size = round(0.01 * m))
+leukemia_sub = leukemia[, idx]
+
+leukemia$class = factor(leukemia$class)
+boxplot(leukemia_sub, pch = 16, cex=0.7)
+
+PC = princomp(leukemia_sub)
+summary(PC, loading = TRUE)
+screeplot(PC, type = "lines", pch = 16, main = "Original Variables")
+barplot(PC$loadings[, 1:2], beside = TRUE, col = 1:35)
+
+library(ggplot2)
+library(ggrepel)
+ggplot(PC$loadings[], aes(Comp.1, Comp.2, label = names(leukemia_sub))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+
+# Scaled PCA
+PC_scale = princomp(leukemia_sub, cor = TRUE)
+summary(PC_scale, loading = TRUE)
+screeplot(PC_scale, type = "lines", pch = 16, main = "Original Variables")
+barplot(PC_scale$loadings[, 1:2], beside = TRUE, col = 1:35)
+
+ggplot(PC_scale$loadings[], aes(Comp.1, Comp.2, label = names(leukemia_sub))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+
+# select 500 predictors with the highest variances
+Y = factor(leukemia$class)
+X = leukemia[,-1]
+vars = apply(X, 2, var)
+X_top = X[, order(vars, decreasing=TRUE)[1:100]]
+boxplot(X_top, pch = 16, cex = 0.7)
+
+PC_1 = prcomp(X_top)
+summary(PC_1, loading = TRUE)
+screeplot(PC_1, type = "lines", pch = 16, main = "Original Variables")
+barplot(PC_1$rotation[, 1:2], beside = TRUE)
+
+ggplot(PC_1$rotation[], aes(PC1, PC2, label = names(X_top))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+
+# Scaled PCA
+PC_1_scale = prcomp(X_top, cor = TRUE)
+summary(PC_1_scale, loading = TRUE)
+screeplot(PC_1_scale, type = "lines", pch = 16, main = "Original Variables")
+barplot(PC_1_scale$rotation[, 1:2], beside = TRUE)
+
+ggplot(PC_1_scale$rotation[], aes(PC1, PC2, label = names(X_top))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+
+```
+
+2.  Diagnostic checks for Parametric Methods
+
+```{r}
+set.seed(0)
+sub_data = leukemia[leukemia$class, -1]
+vars = apply(sub_data, 2, var)
+top_genes = names(sort(vars, decreasing = TRUE))[1:10]
+
+# Normality
+ALL_data = subset(leukemia, class == "ALL")[, -1]
+AML_data = subset(leukemia, class == "AML")[, -1]
+hist(unlist(ALL_data), breaks = 50, col = "skyblue",  main = "Distribution of Predictor Values - ALL",  xlab = "Expression Levels")
+hist(unlist(AML_data), breaks = 50, col = "skyblue", main = "Distribution of Predictor Values - AML", xlab = "Expression Levels")
+
+# Correlation Matrix and Covariance Matrix
+by(leukemia[,top_genes], leukemia$class, cor)
+cor_matrices = by(leukemia[, top_genes], leukemia$class, cor)
+cor_matrices[["ALL"]] 
+cor_matrices[["AML"]]
+
+cor_mat = by(leukemia[, -1], leukemia$class, cor)            
+sapply(cor_matrices, function(m) mean(abs(m[upper.tri(m)])))
+
+# by(leukemia[,-1], leukemia$class, cov)
+cov_matrices = by(leukemia[, top_genes], leukemia$class, cov)
+cov_matrices[["ALL"]] 
+cov_matrices[["AML"]]
+
+```
+
+3.  Parametric methods
+
+```{r}
+set.seed(0)
+# by(leukemia[,-1], leukemia$class, cor)
+# by(leukemia[,-1], leukemia$class, cov)
+
+# library(heplots)
+# box_result = boxM(leukemia[,2:100], leukemia[,1])
+# print(box_result)
+
+# Naive Bayes
+library(e1071)
+train = sample(n, 0.8*n)
+test = setdiff(1:n, train)
+fit = naiveBayes(class ~ ., leukemia, subset = train)
+means = fit$tables
+
+# Compute standardized mean differences for each predictor
+scores <- sapply(fit$tables, function(x) {
+  if (is.matrix(x) && nrow(x) == 2) {
+    # x has rows = classes, columns = c(mean, sd)
+    mean_diff <- abs(x[1, 1] - x[2, 1])
+    pooled_sd <- sqrt((x[1, 2]^2 + x[2, 2]^2) / 2)
+    return(mean_diff / pooled_sd)  # standardized mean difference
+  } else {
+    return(NA)
+  }
+})
+# Remove NA and sort in decreasing order
+scores <- sort(na.omit(scores), decreasing = TRUE)
+# Show top 10 predictors
+head(scores, 10)
+
+response = leukemia$class[test]
+class = fit$levels
+prediction = predict(fit, leukemia[test,], type = "raw")
+prediction = class[apply(prediction, 1, which.max)]
+prediction = factor(prediction, levels = class)
+prediction = predict(fit, leukemia[test,])
+table(response, prediction)
+rate = mean(response != prediction)
+rate
+
+# LDA
+library(MASS)
+fit = lda(class ~ ., leukemia, subset = train)
+# lda_importance = abs(fit$scaling[, 1])
+# names(sort(lda_importance, decreasing = TRUE)[1:10])
+
+Y = leukemia$class[test]
+class = fit$lev
+prediction = predict(fit, leukemia[test,])$posterior
+prediction = class[apply(prediction, 1, which.max)]
+prediction = factor(prediction, levels = class)
+prediction = predict(fit, leukemia[test,])$class
+table(Y, prediction)
+rate = mean(Y != prediction)
+rate
+
+# Logistic Regression
+library(glmnet)
+fit = glm(class ~ ., leukemia, family = binomial)
+summary(fit)
+Y = leukemia$class[test]
+predictions = predict(fit, leukemia[test,])
+predictions = as.numeric(predictions > 0)
+predictions = predict(fit, leukemia[test, ], type = "response")
+predictions = as.numeric(predictions > 0.5)
+table(Y, predictions)
+rate = mean(Y != predictions)
+
+```
+
+4.  Non-parametric methods
+
+```{r}
+set.seed(0)
+
+# KNN
+library(class)
+ind = sample(n, 0.8*n)
+train = leukemia[ind,]
+test = leukemia[-ind,]
+
+Y = test$class
+K = 20
+rate = numeric(K)
+for(k in 1:K){
+  predictions = knn(train[,-1], test[,-1], train$class, k=k)
+  rate[k] = mean(Y != predictions)
+}
+plot(rate, type = "b", pch = 16, lwd = 2, ylab = "Misclassification Rate")
+
+k = which.min(rate)
+predictions = knn(train[,-1], test[,-1], train$class, k=k)
+table(Y, predictions)
+rate = mean(Y != predictions)
+rate
+
+# Classification Tree
+library(rpart)
+library(rpart.plot)
+train = sample(n, 0.8*n)
+test = setdiff(1:n, train)
+tree = rpart(class ~ ., leukemia, subset = train)
+rpart.plot(tree, 5, extra = 1, fallen.leaves = FALSE, digits = 4, box.palette = list(2,3,4))
+
+Y = leukemia$class[test]
+predictions = predict(tree, leukemia[test,], type = "class")
+table(Y, predictions)
+rate = mean(Y != predictions)
+tree_test = rpart(class ~ ., leukemia, subset = test)
+rpart.plot(tree_test, 5, extra = 1, fallen.leaves = FALSE, digits = 4, box.palette = list(2,3,4))
+rate
+
+# Bagging
+library(randomForest)
+p = 3571
+bag = randomForest(class ~., leukemia, subset = train, mtry = p, importance = TRUE)
+varImpPlot(bag, pch = 16, main = NULL)
+
+importance_matrix = importance(bag)
+important_vars = importance_matrix[, "MeanDecreaseGini"]
+top_10 = sort(important_vars, decreasing = TRUE)[1:10]
+print(round(top_10, 2))
+
+Y = leukemia$class[test]
+predictions = predict(bag, leukemia[test,])
+table(Y, predictions)
+rate = mean( Y != predictions)
+rate
+
+top10_bag = names(top_10)
+formula_top10 = as.formula(paste("class ~", paste(top10_bag, collapse = " + ")))
+bag_10 = randomForest(formula_top10, leukemia, subset = train, mtry = length(top10_bag), importance = TRUE)
+varImpPlot(bag_10, pch = 16, main = "Top 10 Predictors (Accuracy) - Bagging")
+
+# Random Forest
+forest = randomForest(class ~., leukemia, subset = train, mtry = floor(sqrt(p)), importance = TRUE)
+varImpPlot(forest, pch = 16, main = NULL)
+
+importance_matrix = importance(forest)
+important_vars = importance_matrix[, "MeanDecreaseGini"]
+top_10 = sort(important_vars, decreasing = TRUE)[1:10]
+print(round(top_10, 2))
+
+predictions = predict(forest, leukemia[test,])
+table(Y, predictions)
+rate = mean( Y != predictions)
+rate
+
+top10_forest = names(top_10)
+formula_top10 = as.formula(paste("class ~", paste(top10_forest, collapse = " + ")))
+forest_10 = randomForest(formula_top10, leukemia, subset = train, mtry = length(top10_forest), importance = TRUE)
+varImpPlot(forest_10, pch = 16, main = "Top 10 Predictors (Accuracy) - Random Forest")
+
+# # AdaBoost
+# library(adabag)
+# boost = boosting(class ~ ., leukemia[train,], boos = FALSE, mfinal = 100, coeflearn = "Zhu", control = rpart.control(maxdepth = 1))
+# importanceplot(boost, horiz = TRUE) 
+# 
+# predictions = predict(boost, leukemia[test,])$class
+# table(Y, predictions)
+# rate = mean(Y != predictions)
+# rate
+# 
+# importance_vals = boost$importance
+# top10_boost = sort(importance_vals, decreasing = TRUE)[1:10]
+# print(round(top10_boost, 2))
+
+```
+
+5.  PCA on top 10 informative predictors
+
+```{r}
+library(ggplot2)
+library(ggrepel)
+
+leukemia_sub = leukemia[, top10_forest]
+boxplot(leukemia_sub, pch = 16, cex = 0.7)
+PC = princomp(leukemia_sub, cor = TRUE)
+summary(PC, loadings = TRUE)
+
+screeplot(PC, type = "lines", pch = 16, main = "Original Variables")
+barplot(PC$loadings[, 1:2], beside = TRUE, col = 1:14, las = 2, main = "Loadings for PC1 and PC2", ylab = "Loading Value")
+legend("topright", inset = c(-0.25, 0), legend = colnames(leukemia_sub), fill = 1:14, cex = 0.7, xpd = TRUE, bty = "n")
+
+load_df = as.data.frame(PC$loadings[, 1:2])
+colnames(load_df) = c("Comp.1", "Comp.2")
+load_df$Gene = rownames(load_df)
+
+ggplot(load_df, aes(x = Comp.1, y = Comp.2, label = Gene)) +
+  geom_point(color = "steelblue", size = 3) +
+  geom_label_repel(size = 3, max.overlaps = 14) +
+  ggtitle("PC Loadings for 10 Selected Genes") +
+  theme_classic(base_size = 13) +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  geom_vline(xintercept = 0, linetype = "dashed")
+
+# # Scaled PCA
+# PC_scale = princomp(leukemia_sub, cor = TRUE)
+# summary(PC_scale, loading = TRUE)
+# screeplot(PC_scale, type = "lines", pch = 16, main = "Original Variables")
+# barplot(PC_scale$loadings[, 1:2], beside = TRUE, col = 1:35)
+# ggplot(PC$loadings[], aes(Comp.1, Comp.2, label = names(leukemia_sub))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+# 
+# # Sparse PCA
+# library(elasticnet)
+# PC_sparse = spca(leukemia_sub, 2, c(4,4), sparse = "varnum")
+# PC_sparse$pev
+# PC_sparse$loadings
+# barplot(PC_sparse$loadings, beside = TRUE, col = 1:14)
+# ggplot(PC_sparse$loadings[], aes(Comp.1, Comp.1, label = names(leukemia_sub))) + geom_point() + geom_label_repel() + ggtitle("PC Loadings") +  theme_classic() + geom_hline(yintercept = 0, linetype = "dashed")
+
+```
+
+6.  Parametric methods using PCA
+
+```{r}
+set.seed(0)
+train = sample(n, 0.8*n)
+test = setdiff(1:n, train)
+y_train = leukemia$class[train]
+y_test = leukemia$class[test]
+scores = as.matrix(leukemia_sub) %*% PC$loadings
+leukemia_PC = data.frame(class = leukemia$class, scores)
+
+# Naive Bayes
+nb_model = naiveBayes(class ~ Comp.1 + Comp.2, data = leukemia_PC, subset = train)
+print(nb_model)
+nb_pred = predict(nb_model, leukemia_PC[test,])
+nb_cm = table(y_test, nb_pred)
+nb_rate = mean(y_test != nb_pred)
+nb_cm
+nb_rate
+
+# LDA
+lda_model = lda(class ~ Comp.1 + Comp.2, data = leukemia_PC, subset = train)
+print(lda_model)
+lda_pred = predict(lda_model, leukemia_PC[test,])$class
+lda_cm = table(y_test, lda_pred)
+lda_rate = mean(y_test != lda_pred)
+lda_cm
+lda_rate
+
+# Logistic Regression
+log_model = glm(class ~ Comp.1 + Comp.2, data = leukemia_PC, subset = train, family = binomial)
+summary(log_model)
+log_probs = predict(log_model, newdata = leukemia_PC[test,], type = "response")
+log_pred = factor(ifelse(log_probs > 0.5, levels(y_train)[2], levels(y_train)[1]), levels = levels(y_train))
+log_cm = table(y_test, log_pred)
+log_rate = mean(y_test != log_pred)
+log_cm
+log_rate
+
+# Plot PC scores
+scores_combined = rbind(leukemia_PC[train, c("Comp.1","Comp.2")],
+                        leukemia_PC[test, c("Comp.1","Comp.2")])
+plot(scores_combined[,1], scores_combined[,2],
+     col = as.numeric(factor(c(y_train, y_test))),
+     pch = c(rep(19, length(y_train)), rep(17, length(y_test))),
+     xlab = "PC1", ylab = "PC2", main = "PCA Scores: PCA Scores: Train ($\\circ$) and Test ($\\triangle$)")
+legend("topright", legend = levels(y_train), col = 1:length(levels(y_train)), pch = 19)
+
+# Check misclassified sample
+mis_idx_nb = which(nb_pred != y_test)
+mis_idx_log = which(log_pred != y_test) # same sample
+mis_sample = test[mis_idx_nb]
+leukemia_PC[mis_sample, c("Comp.1", "Comp.2")]
+
+```
