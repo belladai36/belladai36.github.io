@@ -9,7 +9,6 @@ This project compares parametric and nonparametric machine learning methods for 
 Methods include logistic regression, Naive Bayes, discriminant analysis, decision trees, random forests, boosting, KNN, and SVM.
 
 ### Project Files
-- [Final HTML Report](../files/Midterm%20Project%20Bella%20Dai.html)
 - [Final PDF Report](../files/leukemia%20report,%20Bella%20Dai%20and%20Sarah%20He.pdf)
 - [R Markdown Source](../files/leukemia,%20Bella%20Dai%20and%20Sarah%20He.Rmd)
 - [Clean PDF Version](../files/leukemia,-Bella-Dai-and-Sarah-He.pdf)
