@@ -4,5 +4,5 @@ excerpt: "We analyzed gene expression profiles from 72 leukemia patients to deve
 collection: portfolio
 
 ---
-"Midterm Project Bella Dai.html"
+file/Midterm Project Bella Dai.html
 
