@@ -7,16 +7,16 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "St. Louis-US"
+locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Jinglan(Bella)'s Homepage"
+title                    : "Jinglan (Bella) Dai"
 title_separator          : "-"
-name                     : &name "Jinglan(Bella) Dai"
-description              : &description "Jinglan(Bella)'s academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Jinglan (Bella) Dai"
+description              : &description "Statistics and Economics student at Washington University in St. Louis working across statistical learning, conformal prediction, and biomedical data science."
 url                      : https://belladai36.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "belladai36/belladai36.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -24,12 +24,12 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile_1.JPG"
-  name             : "Jinglan(Bella) Dai"
+  name             : "Jinglan (Bella) Dai"
   pronouns         : "she/her"  
-  bio              : "Statistics and Economics student at Washington University in St. Louis"
+  bio              : "Statistics and Economics student studying reliable machine learning and biomedical data science."
   location         : "St. Louis, MO"
   employer         : "Washington University in St. Louis"
-  uri              : https://belladai36.github.io # URL
+  uri              : # URL
   email            : "bella.d@wustl.edu" 
 
   #Academic websites
