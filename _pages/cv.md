@@ -43,6 +43,8 @@ Research experience
 
 - Standardize growth media and experimental conditions for *Wolffia australiana*.
 - Acquire high-resolution microscopy images and analyze chlorophyll measurements using reproducible computational workflows.
+- Develop an end-to-end SMART-seq single-cell RNA-seq pipeline covering read alignment, gene counting, quality control, dimensionality reduction, clustering, marker discovery, annotation, and trajectory analysis.
+- Build and validate a cross-dataset statistical prediction framework using public Arabidopsis single-cell references to generate testable hypotheses about conserved or compressed cell programs in *Wolffia*.
 - Support statistical evaluation of plant growth and physiological variation through careful data processing and quality control.
 
 ### High-dimensional genomic analysis for leukemia classification
@@ -63,6 +65,14 @@ Research experience
 
 Professional experience
 =======================
+
+### Incoming Data Analyst Intern
+
+**Gala Circle Inc. · Remote · June–September 2026**
+
+- Collect and verify restaurant business metrics, including revenue, point-of-sale service fees, and labor costs.
+- Segment merchants using revenue, operational characteristics, and business needs; combine quantitative analysis with merchant interviews to identify demand patterns.
+- Analyze outreach and conversion performance and support data-driven recommendations for tier-specific operational and promotional strategies.
 
 ### Incoming Residential Advisor
 

@@ -24,7 +24,7 @@ In an undergraduate independent study, I am developing methods and theoretical g
 
 ### Quantitative duckweed biology
 
-As a research assistant in WashU's Cox Lab, I work with *Wolffia australiana*. I help standardize growth conditions, collect high-resolution microscopy images, and build reproducible computational workflows for extracting and analyzing chlorophyll-related measurements.
+As a research assistant in WashU's Cox Lab, I work with *Wolffia australiana*. I help standardize growth conditions, collect high-resolution microscopy images, and build reproducible computational workflows for chlorophyll analysis and single-cell transcriptomics.
 
 ### High-dimensional genomic classification
 
@@ -43,6 +43,6 @@ Selected work
 
 - [Leukemia subtype classification](/portfolio/portfolio-1/)
 - [Drivers of county health outcomes](/portfolio/portfolio-2/)
-- [Wolffia single-cell atlas pipeline](https://github.com/belladai36/wolffia-single-cell-atlas-pipeline)
+- [Prediction-first Wolffia single-cell atlas pipeline](/portfolio/wolffia-single-cell-atlas/)
 
 I am always glad to connect about research, data-science projects, or opportunities to learn together. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).
