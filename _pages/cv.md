@@ -16,7 +16,7 @@ Education
 
 **Washington University in St. Louis** — B.A. in Statistics and Economics, Minor in Classics
 
-August 2024–July 2028 (expected) · GPA: 3.98/4.00
+August 2024–July 2028 (expected) · GPA: 3.99/4.00
 
 - Dean's List, Fall 2024, Spring 2025, and Fall 2025
 - Relevant coursework: Machine Learning, Bayesian Statistics, Linear Algebra, Probability, Linear Regression, Econometrics, Microeconomics, Macroeconomics, and Latin
