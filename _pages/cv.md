@@ -77,7 +77,7 @@ Research experience
 Professional experience
 =======================
 
-### Incoming Data Analyst Intern
+### Data Analyst Intern
 
 **Gala Circle Inc. · Remote · June–September 2026**
 
