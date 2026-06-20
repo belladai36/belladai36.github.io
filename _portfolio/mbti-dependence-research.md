@@ -21,6 +21,6 @@ The video received more than **4,000 views across Bilibili, Weibo, and QQ**, alo
 
 The project qualified for the **2023 China Thinks Big Global Final**.
 
-### Project report
+### Project files
 
 - [Read the bilingual research report](/files/MBTI-dependence-research-report.pdf)

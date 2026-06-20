@@ -32,4 +32,8 @@ Gradient boosting produced the strongest global held-out performance, with an **
 
 Python, pandas, NumPy, scikit-learn, PCA, K-means, t-SNE, UMAP, logistic regression, random forests, gradient boosting, neural networks, and MIMIC-III.
 
+### Project files
+
+- [Open the full interactive HTML analysis](/files/sepsis-ICU-phenotyping-and-mortality-prediction.html)
+
 To protect patient privacy and follow responsible data-sharing practice, the underlying clinical CSV files are not published on this website.

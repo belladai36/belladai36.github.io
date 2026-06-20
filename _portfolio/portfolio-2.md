@@ -9,6 +9,6 @@ This Python data-science project studies variation in county-level health outcom
 
 The analysis combines exploratory visualization, correlation analysis, regression, and tree-based modeling. Results suggest that behavioral factors and access to healthcare jointly shape health disparities, while also highlighting possible confounding and the limits of observational data.
 
-### Project file
+### Project files
 
 - [Open the full interactive HTML report](/files/Midterm%20Project%20Bella%20Dai.html)
