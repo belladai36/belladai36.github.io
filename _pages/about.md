@@ -41,8 +41,10 @@ Interests
 Selected work
 =============
 
+- [Sepsis ICU phenotyping and mortality prediction](/portfolio/sepsis-icu-risk/)
 - [Leukemia subtype classification](/portfolio/portfolio-1/)
 - [Drivers of county health outcomes](/portfolio/portfolio-2/)
 - [Prediction-first Wolffia single-cell atlas pipeline](/portfolio/wolffia-single-cell-atlas/)
+- [Teen MBTI dependence research and interactive science communication](/portfolio/mbti-dependence-research/)
 
 I am always glad to connect about research, data-science projects, or opportunities to learn together. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).

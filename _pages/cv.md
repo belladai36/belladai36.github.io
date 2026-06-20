@@ -55,12 +55,23 @@ Research experience
 - Compared logistic regression, naive Bayes, discriminant analysis, trees, random forests, boosting, K-nearest neighbors, and support vector machines.
 - Used validation and feature filtering to reduce overfitting and assess classification performance.
 
+### Sepsis ICU phenotyping and mortality prediction
+
+**Python for Data Science · Spring 2026**
+
+- Analyzed 274,844 four-hour clinical windows from 8,668 MIMIC-III sepsis ICU stays, integrating vital signs, laboratory measurements, treatment data, demographics, and organ-failure scores.
+- Used PCA and K-means clustering to identify lower-acuity and higher-acuity patient states with substantially different hospital mortality rates.
+- Compared logistic regression, random forest, gradient boosting, and neural-network models using ICU-stay-level train/test separation; gradient boosting achieved a held-out AUC of 0.877.
+- Evaluated missing-data handling, leakage, model complexity, phenotype-specific performance, and treatment confounding to keep conclusions predictive rather than causal.
+
 ### Social research on MBTI popularity — Initiator and Team Lead
 
 **China Thinks Big · Wuhan, China · November 2022–May 2023**
 
 - Led a five-person team and collected 118 survey responses on peers' use of MBTI results.
 - Combined literature analysis and survey evidence to study psychological, social, and market drivers.
+- Designed and published an interactive science-communication video that received more than 4,000 cross-platform views and generated 297 follow-up survey responses.
+- Evaluated changes in viewers' understanding of MBTI and willingness to adopt strategies for reducing overreliance on personality labels.
 - Qualified for the 2023 China Thinks Big Global Final.
 
 Professional experience
