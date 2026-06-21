@@ -3,6 +3,7 @@ title: "Sepsis ICU phenotyping and mortality prediction"
 excerpt: "Discovering clinically distinct patient states and predicting hospital mortality from 274,844 four-hour ICU windows in MIMIC-III."
 collection: portfolio
 permalink: /portfolio/sepsis-icu-risk/
+portfolio_order: 5
 ---
 
 Sepsis patients are highly heterogeneous: people with the same diagnosis can differ sharply in organ dysfunction, treatment intensity, and mortality risk. This project combines unsupervised discovery and supervised prediction to study that heterogeneity using de-identified MIMIC-III critical-care data.

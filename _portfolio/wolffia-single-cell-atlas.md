@@ -3,6 +3,7 @@ title: "Prediction-first Wolffia single-cell atlas pipeline"
 excerpt: "An end-to-end SMART-seq and cross-dataset prediction workflow for studying conserved, reduced, or compressed cell programs in Wolffia australiana."
 collection: portfolio
 permalink: /portfolio/wolffia-single-cell-atlas/
+portfolio_order: 1
 ---
 
 *Wolffia australiana* is one of the world's smallest and most morphologically simplified flowering plants. This project asks whether that organism-level simplification is also reflected in its cellular and transcriptional organization.

@@ -3,6 +3,7 @@ title: "Drivers of county health outcomes"
 excerpt: "An exploratory and predictive analysis of how behavior, economic conditions, insurance coverage, and access to care relate to county-level health outcomes."
 collection: portfolio
 permalink: /portfolio/portfolio-2/
+portfolio_order: 6
 ---
 
 This Python data-science project studies variation in county-level health outcomes across the United States. It explores how smoking, excessive drinking, unemployment, insurance coverage, and access to physicians relate to a composite health index.

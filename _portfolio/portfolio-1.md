@@ -3,6 +3,7 @@ title: "High-dimensional genomic analysis for leukemia classification"
 excerpt: "Comparing parametric and non-parametric machine-learning methods on gene-expression profiles from 72 leukemia patients."
 collection: portfolio
 permalink: /portfolio/portfolio-1/
+portfolio_order: 3
 ---
 
 This project compares parametric and non-parametric machine-learning methods for leukemia subtype classification using high-dimensional gene-expression data from 72 patients.
