@@ -26,9 +26,9 @@ In an undergraduate independent study, I am developing methods and theoretical g
 
 As a research assistant in WashU's Cox Lab, I work with *Wolffia australiana*. I help standardize growth conditions, collect high-resolution microscopy images, and build reproducible computational workflows for chlorophyll analysis and single-cell transcriptomics.
 
-### High-dimensional genomic classification
+### Wolffia single-cell atlas
 
-I analyzed gene-expression profiles from 72 leukemia patients using parametric and non-parametric classifiers, including logistic regression, discriminant analysis, random forests, boosting, K-nearest neighbors, and support vector machines. The project emphasized feature filtering, validation, and protection against overfitting.
+I am developing a prediction-first single-cell atlas workflow for *Wolffia australiana* to investigate whether its extreme morphological simplification is reflected in its cellular and transcriptional organization. The project integrates an end-to-end SMART-seq analysis pipeline with public plant single-cell references, cross-dataset label transfer, biological program scoring, and trajectory analysis to test which canonical flowering-plant cell programs are preserved, merged, weakened, or absent in *Wolffia*.
 
 Interests
 =========
