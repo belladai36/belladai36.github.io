@@ -1,0 +1,19 @@
+---
+layout: archive
+title: "Idea Lab"
+permalink: /idea-lab/
+author_profile: true
+---
+
+{% include base_path %}
+
+<p>
+  A home for small ideas, early experiments, and concepts I want to explore.
+  Each entry can grow over time and may include a short introduction, a website,
+  a prototype, or supporting files when they become available.
+</p>
+
+{% assign ordered_ideas = site.ideas | sort: "idea_order" %}
+{% for post in ordered_ideas %}
+  {% include archive-single.html %}
+{% endfor %}

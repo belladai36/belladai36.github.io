@@ -16,6 +16,9 @@ main:
 
   - title: "Portfolio"
     url: /portfolio/
+
+  - title: "Idea Lab"
+    url: /idea-lab/
     
   - title: "CV"
     url: /cv/

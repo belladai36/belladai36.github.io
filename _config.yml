@@ -227,6 +227,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  ideas:
+    output: true
+    permalink: /idea-lab/:path/
   talks:
     output: false
     permalink: /:collection/:path/
@@ -279,6 +282,15 @@ defaults:
       author_profile: true
       share: false
       comment: true
+  # _ideas
+  - scope:
+      path: ""
+      type: ideas
+    values:
+      layout: single
+      author_profile: true
+      share: false
+      comments: false
   # _talks
   - scope:
       path: ""
