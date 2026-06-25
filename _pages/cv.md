@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download my résumé (PDF)](/files/Jinglan-Bella-Dai-Resume-2026.pdf){: .btn .btn--primary }
+[Download my résumé (PDF)](/files/DAI-Jinglan-Resume-Updated.pdf){: .btn .btn--primary }
 
 Education
 =========
