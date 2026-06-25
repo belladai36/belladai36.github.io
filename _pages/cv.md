@@ -33,7 +33,7 @@ Research experience
 
 **St. Louis, MO · June 2026–Present**
 
-- Developed a reproducible SMART-seq workflow from per-cell FASTQ files through read-quality assessment, STAR alignment, featureCounts quantification, cell-level quality control, clustering, UMAP visualization, marker discovery, and PAGA trajectory inference.
+- Developed a reproducible PIP-seq workflow from per-cell FASTQ files through read-quality assessment, STAR alignment, featureCounts quantification, cell-level quality control, clustering, UMAP visualization, marker discovery, and PAGA trajectory inference.
 - Built and validated a cross-dataset prediction framework using public *Arabidopsis* single-cell datasets to score biological programs, train statistical classifiers, and evaluate label transfer for future analysis of conserved, reduced, or merged cell programs in *Wolffia australiana*.
 
 ### Undergraduate Research Assistant — Single-Cell Transcriptomics in Dr. Duygu Özpolat’s Lab
