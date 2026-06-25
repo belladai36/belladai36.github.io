@@ -28,7 +28,7 @@ As a research assistant in WashU's Cox Lab, I work with *Wolffia australiana*. I
 
 ### Wolffia single-cell atlas
 
-I am developing a prediction-first single-cell atlas workflow for *Wolffia australiana* to investigate whether its extreme morphological simplification is reflected in its cellular and transcriptional organization. The project integrates an end-to-end SMART-seq analysis pipeline with public plant single-cell references, cross-dataset label transfer, biological program scoring, and trajectory analysis to test which canonical flowering-plant cell programs are preserved, merged, weakened, or absent in *Wolffia*.
+I am developing a prediction-first single-cell atlas workflow for *Wolffia australiana* to investigate whether its extreme morphological simplification is reflected in its cellular and transcriptional organization. The project integrates an end-to-end PIP-seq analysis pipeline with public plant single-cell references, cross-dataset label transfer, biological program scoring, and trajectory analysis to test which canonical flowering-plant cell programs are preserved, merged, weakened, or absent in *Wolffia*.
 
 Interests
 =========
