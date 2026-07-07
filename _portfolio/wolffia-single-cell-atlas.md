@@ -1,31 +1,28 @@
 ---
-title: "Prediction-first Wolffia single-cell atlas pipeline"
-excerpt: "An end-to-end PIP-seq and cross-dataset prediction workflow for studying conserved, reduced, or compressed cell programs in Wolffia australiana."
+title: "Statistical learning for a Wolffia single-cell atlas"
+excerpt: "A reproducible PIP-seq/Scanpy workflow combining dimension reduction, clustering, supervised classification, and cross-dataset label-transfer evaluation."
 collection: portfolio
 permalink: /portfolio/wolffia-single-cell-atlas/
-portfolio_order: 1
+portfolio_order: 2
 ---
 
 *Wolffia australiana* is one of the world's smallest and most morphologically simplified flowering plants. This project asks whether that organism-level simplification is also reflected in its cellular and transcriptional organization.
 
-I developed a reproducible, end-to-end workflow for future *Wolffia* PIP-seq data. The pipeline begins with per-cell FASTQ files and covers:
+I developed a reproducible statistical-computing workflow for future *Wolffia* PIP-seq data. The pipeline covers:
 
-- FastQC and MultiQC read-quality assessment
-- STAR alignment and featureCounts gene quantification
-- gene-by-cell matrix construction
-- cell-level quality control and filtering
-- normalization, highly variable gene selection, and PCA
+- cell-level quality control, filtering, and normalization
+- highly variable feature selection and principal component analysis
 - Leiden clustering and UMAP visualization
-- marker discovery and conservative cell-state annotation
-- PAGA trajectory inference and parameter-robustness checks
+- marker-based feature assessment and conservative state annotation
+- PAGA trajectory inference and parameter-sensitivity checks
 
-Because the primary *Wolffia* data are still being prepared, I also built a prediction-first reference framework using public plant single-cell datasets. The workflow resolves marker genes across gene-symbol and Arabidopsis locus-ID formats, scores broad biological programs, trains statistical classifiers, and evaluates cross-dataset label transfer.
+Because the primary *Wolffia* data are still being prepared, I also built a prediction-first reference framework using public single-cell datasets. The workflow harmonizes features across datasets, constructs latent program scores, trains supervised classifiers, and evaluates cross-dataset label transfer.
 
-Initial validation on public Arabidopsis datasets showed that the pipeline can recover and transfer broad transcriptional structure across experiments. This establishes a cautious proof of concept for testing whether canonical flowering-plant programs are preserved, weakened, merged, or absent in *Wolffia*.
+Initial validation showed that the pipeline can recover and transfer broad structure across experiments. This provides a proof of concept while keeping the inferential limits of cross-dataset prediction explicit.
 
 ### Technologies
 
-Python, R, Scanpy, AnnData, scikit-learn, STAR, featureCounts, FastQC, MultiQC, shell scripting, YAML, and public GEO single-cell datasets.
+Python, R, Scanpy, AnnData, scikit-learn, PCA, Leiden clustering, UMAP, PAGA, supervised classification, Jupyter, Git/GitHub, and public single-cell reference datasets.
 
 ### Project repository
 

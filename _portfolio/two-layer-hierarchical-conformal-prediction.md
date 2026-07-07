@@ -3,7 +3,7 @@ title: "Two-layer hierarchical time-to-event conformal prediction"
 excerpt: "Developing marginal and covariate-adaptive lower prediction bounds for clustered survival data with right censoring."
 collection: portfolio
 permalink: /portfolio/two-layer-hierarchical-conformal-prediction/
-portfolio_order: 2
+portfolio_order: 1
 ---
 
 Many time-to-event datasets are not collections of independent individuals. Patients may be nested within hospitals, students within schools, repeated units within sites, or family members within households. Outcomes are dependent within each cluster, cluster sizes vary, and event times may be only partially observed because of right censoring. These features make standard individual-level conformal prediction difficult to apply directly.

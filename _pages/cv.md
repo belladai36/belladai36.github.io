@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download my résumé (PDF)](/files/DAI-Jinglan-Resume-Updated.pdf){: .btn .btn--primary }
+[Download my CV (PDF)](/files/Jinglan-Dai-Resume-Biostatistics-Statistics-PhD.pdf){: .btn .btn--primary }
 
 Education
 =========
@@ -24,49 +24,48 @@ August 2024–July 2028 (expected) · GPA: 3.99/4.00
 Research interests
 ==================
 
-Conformal prediction in hierarchical data; machine learning; robust high-dimensional statistical estimation and inference; biomedical informatics; single-cell transcriptomics.
+Conformal prediction and uncertainty quantification; survival analysis; high-dimensional statistical inference; statistical learning; biostatistics; reproducible statistical computing.
 
 Research experience
 ===================
 
-### Computational Genomics Project — Prediction-First *Wolffia* Single-Cell Atlas
-
-**St. Louis, MO · June 2026–Present**
-
-- Developed a reproducible PIP-seq workflow from per-cell FASTQ files through read-quality assessment, STAR alignment, featureCounts quantification, cell-level quality control, clustering, UMAP visualization, marker discovery, and PAGA trajectory inference.
-- Built and validated a cross-dataset prediction framework using public *Arabidopsis* single-cell datasets to score biological programs, train statistical classifiers, and evaluate label transfer for future analysis of conserved, reduced, or merged cell programs in *Wolffia australiana*.
-
-### Undergraduate Research Assistant — Single-Cell Transcriptomics in Dr. Duygu Özpolat’s Lab
-
-**St. Louis, MO · June 2026–Present**
-
-- Conduct literature review on annelid adult cell-type diversity, stem-cell lineages, and gut transcriptional programs to inform analysis of *Pristina* single-cell RNA-seq data.
-- Analyze *Pristina* scRNA-seq data using single-cell browsers, CELLxGENE, and Jupyter notebooks while collaborating with lab members on annelid biology and bioinformatics.
-
-### Undergraduate Independent Study — Two-Layer Hierarchical Time-to-Event Conformal Prediction
+### Undergraduate Independent Study — Two-Layer Hierarchical Conformal Prediction
 
 **St. Louis, MO · January 2026–Present**
 
-- Reviewed and synthesized methods for conformal prediction with two-layer hierarchical data and right-censored time-to-event outcomes.
-- Developed theoretical guarantees and calibration algorithms for hierarchical time-to-event conformal prediction.
-- Continue to develop robust conditional lower prediction bounds for data with within-cluster dependence and censoring.
+- Studied hierarchical conformal prediction and survival-analysis methods for dependent, right-censored time-to-event outcomes.
+- Developed calibration procedures and finite-sample coverage guarantees for cluster- and individual-level lower prediction bounds.
+- Extended the framework toward conditional and group-conditional coverage under within-cluster dependence, censoring, covariate shift, and unequal cluster sizes.
 
-### Research Assistant — Cox Lab, Duckweed Biology
+### Research Project — Statistical Learning for a *Wolffia* Single-Cell Atlas
 
-**St. Louis, MO · January 2026–Present**
+**St. Louis, MO · June 2026–Present**
 
-- Formulated and standardized growth media for *Wolffia australiana* to support reproducible experimental conditions.
-- Acquired high-resolution microscopy images of chlorophyll and performed quantitative image-based analysis using computational workflows.
-- Extracted and analyzed chlorophyll-related measurements to support statistical evaluation of plant growth and physiological variation.
-- Maintained experimental reproducibility through systematic solution preparation, protocol adherence, and laboratory quality-control procedures.
+- Developed a reproducible PIP-seq/Scanpy workflow for quality control, normalization, feature selection, dimensionality reduction, Leiden clustering, UMAP visualization, and trajectory inference.
+- Built a cross-dataset statistical-learning framework using feature harmonization, latent program scores, supervised classification, and quantitative evaluation of label-transfer performance.
 
-### High-Dimensional Genomic Analysis for Leukemia Classification
+### Statistical Learning — High-Dimensional Classification
 
 **St. Louis, MO · November 2025–January 2026**
 
-- Analyzed gene-expression profiles from 72 leukemia patients to develop predictive models for subtype classification.
-- Compared parametric methods—logistic regression, naive Bayes, and discriminant analysis—with classification trees, random forests, boosting, K-nearest neighbors, and support vector machines.
-- Used model validation and feature filtering to reduce overfitting and evaluate classification performance.
+- Analyzed high-dimensional predictor data from 72 patients for binary subtype classification.
+- Compared logistic regression, naive Bayes, discriminant analysis, decision trees, random forests, boosting, K-nearest neighbors, and support vector machines.
+- Applied feature screening and out-of-sample model validation to assess overfitting, predictive accuracy, and generalization performance.
+
+### Research Assistant — Özpolat Lab, Statistical Analysis
+
+**St. Louis, MO · June 2026–Present**
+
+- Reviewed single-cell methods to define candidate labels, marker features, and reproducible annotation criteria.
+- Conducted exploratory data analysis in CELLxGENE and Jupyter, evaluating expression distributions, candidate features, and annotation consistency with domain experts.
+
+### Research Assistant — Cox Lab, Quantitative Image Analysis
+
+**St. Louis, MO · January 2026–Present**
+
+- Standardized experimental protocols and measurement procedures to support reproducible data collection.
+- Built quantitative image-analysis workflows that transformed high-resolution images into structured features for statistical comparison and longitudinal trend analysis.
+- Maintained data quality through protocol standardization, measurement validation, reproducible records, and laboratory quality-control procedures.
 
 ### Social Research on MBTI Popularity — Initiator and Team Lead
 
@@ -78,13 +77,12 @@ Research experience
 - Synthesized theoretical and survey evidence into a research paper and created an interactive science-communication video.
 - Qualified for the 2023 China Thinks Big Global Final.
 
-### Statistical Modelling — CO₂ Emissions and Global Temperature Change
+### Statistical Modeling — Regression and Time-Series Forecasting
 
 **November 2022–February 2023**
 
-- Used Python to fit quadratic polynomial and quadratic polynomial-plus-dummy-variable models to atmospheric CO₂ concentration data and forecast concentrations for 2050 and 2100.
-- Introduced an ARIMA model to forecast land–ocean temperature change.
-- Conducted correlation and regression analyses to study the relationship between atmospheric CO₂ concentration and global temperature change.
+- Fit polynomial-regression, indicator-variable, and ARIMA models in Python to analyze long-term trends and generate forecasts through 2050 and 2100.
+- Performed correlation and regression analysis to quantify the relationship between atmospheric CO₂ and global temperature change.
 
 Professional experience
 =======================
@@ -136,5 +134,5 @@ Leadership and service
 Skills and interests
 ====================
 
-- **Programming and analysis:** Python (proficient), R (proficient), SQL (intermediate), Excel (intermediate), JavaScript (basic), LaTeX (basic)
+- **Programming and analysis:** Python (proficient), R (proficient), SQL (intermediate), Excel (intermediate), JavaScript (basic), LaTeX (basic); pandas, NumPy, scikit-learn, Scanpy, AnnData, Jupyter, and Git/GitHub
 - **Languages:** Mandarin Chinese (native), English (proficient), Latin (familiar), Korean (beginner)

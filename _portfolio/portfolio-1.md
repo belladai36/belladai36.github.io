@@ -1,14 +1,14 @@
 ---
-title: "High-dimensional genomic analysis for leukemia classification"
-excerpt: "Comparing parametric and non-parametric machine-learning methods on gene-expression profiles from 72 leukemia patients."
+title: "High-dimensional statistical learning for patient classification"
+excerpt: "Comparing parametric and non-parametric classifiers with feature screening and out-of-sample validation on high-dimensional patient data."
 collection: portfolio
 permalink: /portfolio/portfolio-1/
 portfolio_order: 3
 ---
 
-This project compares parametric and non-parametric machine-learning methods for leukemia subtype classification using high-dimensional gene-expression data from 72 patients.
+This project compares parametric and non-parametric statistical-learning methods for binary subtype classification using high-dimensional predictor data from 72 patients.
 
-The analysis includes logistic regression, naive Bayes, discriminant analysis, decision trees, random forests, boosting, K-nearest neighbors, and support vector machines. Feature filtering and model validation were used to limit overfitting and compare predictive performance.
+The analysis includes logistic regression, naive Bayes, discriminant analysis, decision trees, random forests, boosting, K-nearest neighbors, and support vector machines. Feature screening and out-of-sample validation were used to assess overfitting, predictive accuracy, and generalization performance.
 
 ### Project files
 

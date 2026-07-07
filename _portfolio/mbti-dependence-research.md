@@ -3,7 +3,7 @@ title: "Teen MBTI dependence research and interactive science communication"
 excerpt: "A mixed-methods study of teenagers' reliance on MBTI labels, followed by an interactive public-education intervention and impact evaluation."
 collection: portfolio
 permalink: /portfolio/mbti-dependence-research/
-portfolio_order: 4
+portfolio_order: 6
 ---
 
 As initiator and team lead for a five-person China Thinks Big project, I studied why teenagers increasingly use MBTI personality labels to interpret identity, relationships, and behavior.

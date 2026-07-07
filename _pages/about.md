@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-I am an undergraduate at **Washington University in St. Louis**, pursuing a B.A. in Statistics and Economics with a minor in Classics. I am interested in building statistical and machine-learning methods that remain reliable in complex, real-world settings.
+I am an undergraduate at **Washington University in St. Louis**, pursuing a B.A. in Statistics and Economics with a minor in Classics. I am preparing for graduate study in **statistics and biostatistics**, with a focus on developing reliable methods for structured, censored, and high-dimensional data.
 
-My current work sits at the intersection of **conformal prediction, hierarchical data, high-dimensional inference, and biomedical informatics**. I enjoy moving between mathematical questions, computational analysis, and hands-on scientific research.
+My current work sits at the intersection of **conformal prediction, survival analysis, hierarchical data, high-dimensional inference, and statistical learning for biomedical applications**. I am especially interested in problems where rigorous uncertainty quantification must account for dependence, censoring, covariate shift, or limited sample size.
 
 [View my CV](/cv/){: .btn .btn--primary }
 [Explore my projects](/portfolio/){: .btn }
@@ -20,31 +20,33 @@ Research
 
 ### Hierarchical time-to-event conformal prediction
 
-In an undergraduate independent study, I am developing methods and theoretical guarantees for two-layer hierarchical survival data. The current goal is a robust conditional lower prediction bound that accounts for dependence within hierarchical structures.
+In an undergraduate independent study, I am developing calibration procedures and finite-sample coverage guarantees for two-layer hierarchical survival data. The project studies cluster- and individual-level lower prediction bounds under right censoring, within-cluster dependence, unequal cluster sizes, covariate shift, and conditional or group-conditional coverage targets.
 
-### Quantitative duckweed biology
+### Statistical learning for single-cell data
 
-As a research assistant in WashU's Cox Lab, I work with *Wolffia australiana*. I help standardize growth conditions, collect high-resolution microscopy images, and build reproducible computational workflows for chlorophyll analysis and single-cell transcriptomics.
+I am building a reproducible PIP-seq/Scanpy workflow for quality control, normalization, feature selection, dimensionality reduction, clustering, visualization, and trajectory inference. A cross-dataset prediction framework uses feature harmonization, latent program scores, supervised classification, and quantitative evaluation of label-transfer performance.
 
-### Wolffia single-cell atlas
+### High-dimensional genomic classification
 
-I am developing a prediction-first single-cell atlas workflow for *Wolffia australiana* to investigate whether its extreme morphological simplification is reflected in its cellular and transcriptional organization. The project integrates an end-to-end PIP-seq analysis pipeline with public plant single-cell references, cross-dataset label transfer, biological program scoring, and trajectory analysis to test which canonical flowering-plant cell programs are preserved, merged, weakened, or absent in *Wolffia*.
+I analyzed high-dimensional predictor data from 72 patients using logistic regression, naive Bayes, discriminant analysis, decision trees, random forests, boosting, K-nearest neighbors, and support vector machines. The project emphasized feature screening, out-of-sample validation, overfitting control, and comparison of generalization performance.
 
 Interests
 =========
 
 - Conformal prediction and uncertainty quantification
-- Robust high-dimensional estimation and inference
-- Machine learning for biomedical data
+- Survival analysis and censored outcomes
+- High-dimensional statistical inference and statistical learning
+- Biostatistical methods for biomedical data
 - Reproducible statistical computing
 
 Selected work
 =============
 
-- [Sepsis ICU phenotyping and mortality prediction](/portfolio/sepsis-icu-risk/)
+- [Two-layer hierarchical time-to-event conformal prediction](/portfolio/two-layer-hierarchical-conformal-prediction/)
+- [Statistical learning for a Wolffia single-cell atlas](/portfolio/wolffia-single-cell-atlas/)
 - [Leukemia subtype classification](/portfolio/portfolio-1/)
+- [Sepsis ICU phenotyping and mortality prediction](/portfolio/sepsis-icu-risk/)
 - [Drivers of county health outcomes](/portfolio/portfolio-2/)
-- [Prediction-first Wolffia single-cell atlas pipeline](/portfolio/wolffia-single-cell-atlas/)
 - [Teen MBTI dependence research and interactive science communication](/portfolio/mbti-dependence-research/)
 
-I am always glad to connect about research, data-science projects, or opportunities to learn together. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).
+I am always glad to connect about statistics, biostatistics, methodological research, or graduate study. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).
