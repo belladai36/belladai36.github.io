@@ -3,7 +3,7 @@ title: "Sepsis ICU phenotyping and mortality prediction"
 excerpt: "Discovering clinically distinct patient states and predicting hospital mortality from 274,844 four-hour ICU windows in MIMIC-III."
 collection: portfolio
 permalink: /portfolio/sepsis-icu-risk/
-portfolio_order: 4
+portfolio_order: 5
 ---
 
 This biostatistical learning project combines unsupervised phenotyping and supervised risk prediction to study heterogeneity in de-identified MIMIC-III critical-care data.

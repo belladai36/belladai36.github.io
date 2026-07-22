@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am an undergraduate at **Washington University in St. Louis**, pursuing a B.A. in Statistics and Economics with a minor in Classics. I am preparing for graduate study in **statistics and biostatistics**, with a focus on developing reliable methods for structured, censored, and high-dimensional data.
+I am an undergraduate at **Washington University in St. Louis**, pursuing a B.A. in Statistics and Economics with a minor in Classics. My work focuses on **statistics and biostatistics**, especially reliable methods for structured, censored, and high-dimensional data.
 
 My current work sits at the intersection of **conformal prediction, survival analysis, hierarchical data, high-dimensional inference, and statistical learning for biomedical applications**. I am especially interested in problems where rigorous uncertainty quantification must account for dependence, censoring, covariate shift, or limited sample size.
 
@@ -25,6 +25,10 @@ In an undergraduate independent study, I am developing calibration procedures an
 ### Statistical learning for single-cell data
 
 I am building a reproducible PIP-seq/Scanpy workflow for quality control, normalization, feature selection, dimensionality reduction, clustering, visualization, and trajectory inference. A cross-dataset prediction framework uses feature harmonization, latent program scores, supervised classification, and quantitative evaluation of label-transfer performance.
+
+### Cross-species single-cell mapping
+
+I am also using SAMap to compare *Pristina* gut cell states with reference structures from other organisms, including human and zebrafish. A related local SAMap workflow focuses on smaller transcriptional neighborhoods and targeted pattern discovery, with attention to feature harmonization, alignment stability, and interpretable cross-species similarity.
 
 ### High-dimensional genomic classification
 
@@ -44,9 +48,10 @@ Selected work
 
 - [Two-layer hierarchical time-to-event conformal prediction](/portfolio/two-layer-hierarchical-conformal-prediction/)
 - [Statistical learning for a Wolffia single-cell atlas](/portfolio/wolffia-single-cell-atlas/)
+- [Cross-species single-cell mapping with SAMap](/portfolio/samap-cross-species-gut-comparison/)
 - [Leukemia subtype classification](/portfolio/portfolio-1/)
 - [Sepsis ICU phenotyping and mortality prediction](/portfolio/sepsis-icu-risk/)
 - [Drivers of county health outcomes](/portfolio/portfolio-2/)
 - [Teen MBTI dependence research and interactive science communication](/portfolio/mbti-dependence-research/)
 
-I am always glad to connect about statistics, biostatistics, methodological research, or graduate study. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).
+I am always glad to connect about statistics, biostatistics, methodological research, or computational work with biomedical data. You can reach me at [bella.d@wustl.edu](mailto:bella.d@wustl.edu).

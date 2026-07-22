@@ -3,7 +3,7 @@ title: "High-dimensional statistical learning for patient classification"
 excerpt: "Comparing parametric and non-parametric classifiers with feature screening and out-of-sample validation on high-dimensional patient data."
 collection: portfolio
 permalink: /portfolio/portfolio-1/
-portfolio_order: 3
+portfolio_order: 4
 ---
 
 This project compares parametric and non-parametric statistical-learning methods for binary subtype classification using high-dimensional predictor data from 72 patients.
